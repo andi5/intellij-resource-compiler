@@ -1,5 +1,5 @@
-Run gradle idea
-Open the project with IDEA
+Run ./gradlew idea
+Open the project with IDEA, but do not import it with the gradle plugin
 Build the project within IDEA
-Run gradle copyFile
+Run ./gradlew copyFile
 Build the project within IDEA, again
