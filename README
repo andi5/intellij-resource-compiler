@@ -1,0 +1,5 @@
+Run gradle idea
+Open the project with IDEA
+Build the project within IDEA
+Run gradle copyFile
+Build the project within IDEA, again
