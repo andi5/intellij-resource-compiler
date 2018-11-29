@@ -1,0 +1,28 @@
+plugins {
+   id 'java'
+   id 'idea'
+}
+
+task copyFile(type: Copy) {
+   outputs.upToDateWhen { false }
+   from file('copy-src/file.txt')
+   into file('gen-src/dir')
+
+   doFirst {
+      file("gen-src").eachFileRecurse { it.setWritable(true, false) }
+   }
+
+   doLast {
+      file("gen-src").eachFileRecurse { it.setWritable(false, false) }
+   }
+}
+
+sourceSets {
+   main {
+      java {
+         srcDir file('gen-src')
+      }
+   }
+}
+
+tasks.idea.dependsOn(copyFile)
